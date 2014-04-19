@@ -1,25 +1,15 @@
 path = require("path")
-templatePath = path.normalize(__dirname + "/../app/mailer/templates")
 
 module.exports =
-	db: "mongodb://localhost/rtd-dev"
+	db: <%= _.slugify(dbUrl) %>
 	port: 3010
-	app:
-		name: "RTD"
-		domain: ""
-	notifier:
-		service: "postmark"
-		APN: false
-		email: false # true
-		actions: ["comment"]
-		tplPath: templatePath
-		key: "POSTMARK_KEY"
+	appName: "RTD"
 	parse:
-		appId: "SR3nxUAeP618H9SwY5uPjmRBut3eqsh8TG927Dqr"
-		masterKey : "iPi843R6VQmSqfKAjaLM2Tk888hzspEuHhFf5kYp"
+		appId: "PARSE_APP_ID"
+		masterKey : "PARSE_MASTER_KEY"
 	facebook:
 		clientID: "APP_ID",
-		clientSecret: "APP_SECRET",
+		clientSecret: "APP_SECRET"
 		callbackURL: "http://localhost:3000/auth/facebook/callback"
 	twitter:
 		clientID: "CONSUMER_KEY",
@@ -42,15 +32,11 @@ module.exports =
 		callbackURL: "http://localhost:3000/auth/linkedin/callback"
 	mailer :
 		smtpSettings:
-		#service: "Gmail"
-		#host : "smtp.google.com"
-		#secureConnection : true
-
 			auth:
-				user: "prakash@noplug.in"
-				pass: "gVdHS1Bj5IqK8_3Cg8AKRQ"
-			host:'smtp.mandrillapp.com'
+				user: "REGISTERED_EMAIL"
+				pass: "PASSWORD"
+			host:'SMTP_HOSTNAME'
 			port : 587
-		from: "RTD<support@rtd.io>"
+		from: "ALIAS_EMAIL"
 
 

@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var fs = require('fs');
+var directoryStructure = require('./directoryStructure');
 
 var NodewebGenerator = yeoman.generators.Base.extend({
 	init: function () {
@@ -35,46 +36,7 @@ var NodewebGenerator = yeoman.generators.Base.extend({
 	},
 
 	app: function () {
-		var dirName = this.appName;
-
-		// Checking if any contents in the folder
-		var files = fs.readdirSync(__dirname);
-		console.log(files);
-		var fileCount = files.length;
-		console.log(__dirname);
-		if (fileCount > 0) {
-			// There are already files in the directory so create a folder with name given by the user
-			this.mkdir(dirName);
-		} else {
-			dirName = '';
-		}
-
-		var paths = [
-			//Level One
-			'app',
-			'config',
-			'lib',
-			'public',
-
-			//Level two
-			'app/models',
-			'app/modules',
-			'app/views',
-
-			//Level Three
-			'app/views/controls',
-			'app/views/includes',
-			'app/views/templates',
-			'app/views/layouts'
-		];
-
-		for (var i = 0; i < paths.length; i++) {
-			this.mkdir(dirName + '/' + paths[i]);
-		}
-
-		//Templates
-		this.template('_package.json', dirName + '/package.json');
-		this.template('_bower.json', dirName + '/bower.json');
+		directoryStructure.create(this, this.appName);
 	},
 
 	projectfiles: function () {
