@@ -1,4 +1,4 @@
-# generator-nodeweb [![Build Status](https://secure.travis-ci.org/prakash122/generator-nodeweb.png?branch=master)](https://travis-ci.org/prakash122/generator-nodeweb)
+# generator-nodeweb
 
 > [Yeoman](http://yeoman.io) generator
 
