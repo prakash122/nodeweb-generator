@@ -30,7 +30,6 @@ var NodewebGenerator = yeoman.generators.Base.extend({
 		this.prompt(prompts, function (props) {
 			this.appName = props.appName;
 			this.dbUrl = props.dbUrl;
-
 			done();
 		}.bind(this));
 	},

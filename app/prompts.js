@@ -6,9 +6,5 @@ module.exports = [
 	{
 		name: 'dbUrl',
 		message: 'What is the path of your database'
-	},
-	{
-		name: 'useCoffee',
-		message: 'Do you want Coffee?'
 	}
 ];
