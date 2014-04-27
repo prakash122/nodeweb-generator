@@ -1,5 +1,25 @@
 {
 	"name": "<%= _.slugify(appName) %>",
 	"version": "0.0.0",
-	"dependencies": {}
+	"dependencies": {
+		"coffee-script": "1.6",
+		"express": "~3.4.8",
+		"cookie-parser": "~1.0.1",
+		"body-parser": "~1.0.0",
+		"jade": "*",
+		"less-middleware": "*",
+		"connect-mongo": "*",
+		"extend": "*",
+		"underscore": "*",
+		"mongoose": "*",
+		"passport": "*",
+		"passport-facebook": "*",
+		"passport-github": "*",
+		"passport-google": "*",
+		"passport-google-oauth": "*",
+		"passport-linkedin": "*",
+		"passport-local": "*",
+		"passport-twitter": "*",
+		"nodemailer": "*"
+	}
 }
