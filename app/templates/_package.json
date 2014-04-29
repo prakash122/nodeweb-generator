@@ -1,6 +1,6 @@
 {
 	"name": "<%= _.slugify(appName) %>",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"dependencies": {
 		"coffee-script": "1.6",
 		"express": "~3.4.8",
