@@ -1,8 +1,8 @@
 path = require("path")
 
 module.exports =
-	db: <%= _.slugify(dbUrl) %>
-	port: 3010
+	db: <%= dbUrl %>
+	port: 3000
 	appName: "RTD"
 	parse:
 		appId: "PARSE_APP_ID"

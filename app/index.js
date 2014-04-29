@@ -20,16 +20,12 @@ var NodewebGenerator = yeoman.generators.Base.extend({
 	askFor: function () {
 		var done = this.async();
 
-		// have Yeoman greet the user
-		this.log(this.yeoman);
-
-		// replace it with a short and sweet description of your generator
-		this.log(chalk.magenta('You\'re using the fantastic Nodeweb generator.'));
-
 		var prompts = require('./prompts');
 		this.prompt(prompts, function (props) {
 			this.appName = props.appName;
-			this.dbUrl = props.dbUrl;
+//			this.dbUrl = props.dbUrl ? "'" + props.dbUrl + "'" : "process.env.MONGOHQ_URL";
+			var dbName = props.dbUrl || 'test';
+			this.dbUrl = "'mongodb://localhost/" + dbName + "'";
 			done();
 		}.bind(this));
 	},

@@ -66,11 +66,16 @@ module.exports = {
 
 		//Creating passport config
 		generator.copy('configs/passport.coffee', configPath + '/passport.coffee');
+		generator.copy('configs/router.coffee', configPath + '/router.coffee');
+
+		generator.copy('configs/configurations.coffee', configPath + '/configurations.coffee');
 
 		//Copying app.coffee
-		generator.copy('app.coffee', configPath + '/app.coffee');
+		generator.copy('app.coffee',  'app.coffee');
 
+		var appPath = 'app';
 		//Now the app contents
+		generator.copy('app/models/User.coffee', appPath + '/models/User.coffee');
 
 
 	}

@@ -5,6 +5,6 @@ module.exports = [
 	},
 	{
 		name: 'dbUrl',
-		message: 'What is the path of your database'
+		message: 'What is the db name of your database(default :- test)'
 	}
 ];
